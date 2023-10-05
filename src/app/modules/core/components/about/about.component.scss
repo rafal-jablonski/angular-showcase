@@ -1,0 +1,9 @@
+@use 'src/assets/styles/mixins' as mixins;
+
+.portfolio-about-screen {
+  @include mixins.core-screen-card;
+  background-color: skyblue;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}

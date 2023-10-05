@@ -6,8 +6,7 @@ import { PreferencesScreenComponent } from './components/preferences-screen/pref
 import { TutorialComponent } from './components/tutorial/tutorial.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-
-
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
     ProjectsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatIconModule,
   ],
   exports: [
     CoreComponent,

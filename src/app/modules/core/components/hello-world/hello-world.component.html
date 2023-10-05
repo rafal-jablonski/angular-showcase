@@ -1,1 +1,29 @@
-<p>hello-world works!</p>
+<div class="portfolio-hello-world">
+  <div class="portfolio-hello-world__title">
+    <p class="portfolio-hello-world__title__text">Hello, world</p>
+  </div>
+  <div class="portfolio-hello-world__title">
+    <p class="portfolio-hello-world__title__text__subheading">Welcome to my land of code!</p>
+  </div>
+  <video 
+    [muted]="true"
+    autoplay
+    #video
+    class="portfolio-hello-world__video"
+  >
+    <source 
+      src="./../../../../../assets/videos/world.mp4" 
+      type="video/mp4"
+    />
+  </video>
+  <div class="portfolio-hello-world__cta">
+    <div class="portfolio-hello-world__cta__text">
+      <p>Scroll down to continue...</p>
+    </div>
+    <div class="portfolio-hello-world__cta__arrows">
+      <mat-icon  class="portfolio-hello-world__cta__arrows__element"><span>expand_more</span></mat-icon>
+      <mat-icon  class="portfolio-hello-world__cta__arrows__element"><span>expand_more</span></mat-icon>
+      <mat-icon  class="portfolio-hello-world__cta__arrows__element"><span>expand_more</span></mat-icon>
+    </div>
+  </div>
+</div>
