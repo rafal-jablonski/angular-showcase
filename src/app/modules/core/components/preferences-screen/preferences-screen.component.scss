@@ -1,0 +1,9 @@
+@use 'src/assets/styles/mixins' as mixins;
+
+.portfolio-preferences-screen {
+  @include mixins.core-screen-card;
+  background-color: aqua;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}

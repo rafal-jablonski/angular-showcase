@@ -1,0 +1,15 @@
+div {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+::ng-deep {
+  html {
+    overflow: hidden;
+  }
+
+  body {
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+  }
+}
