@@ -1,49 +1,50 @@
 @use 'src/assets/styles/mixins' as mixins;
 @import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+@import 'src/assets/styles/keyframes';
 
 .portfolio-hello-world {
   @include mixins.core-screen-card;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include mixins.flex-column-centered;
+  @include mixins.zero-padding-margin;
   box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding: 0;
-  margin: 0;
-  background-color: #00000044;
+  overflow: hidden;
+  background-color: $color-background-universe;
   position: relative;
 
   &__title {
-    color: #34cf00;
     overflow: hidden;
     transform: translateY(-200px);
 
     &__text {
-      font-family: 'IBM Plex Mono', monospace;
-      background-color: #000000bb;
+      @include mixins.font-family-size-weight-color('IBM Plex Mono', 2.5em, 400, $color-font-terminal-green);
+      @include mixins.typewriter-container;
+      background-color: $color-background-universe-text;
       padding: 10px;
       margin: 10px;
-      font-size: 2.5em;
-      width: fit-content;
-
-      overflow: hidden;
-      border-right: .15em solid transparent;
-      white-space: nowrap;
-      letter-spacing: .15em;
+ 
       animation: 
-        typing 2s steps(12),
+        typing 2s steps(var(--line-1-length)),
         blink-caret .75s step-end 3;
 
-      &__subheading {
+      &__middle {
         visibility: hidden;
         @extend .portfolio-hello-world__title__text;
         animation: 
           become-visible 0s ease-in 2s forwards,
-          typing 3s steps(27, end),
+          typing 1.5s steps(var(--line-2-length)),
+          blink-caret .75s step-end 2;
+        animation-delay: 2s;
+      }
+
+      &__final {
+        visibility: hidden;
+        @extend .portfolio-hello-world__title__text;
+        animation: 
+          become-visible 0s ease-in 4s forwards,
+          typing 3s steps(var(--line-3-length), end),
           blink-caret .75s step-end infinite;
-        animation-delay: 3s;
+        animation-delay: 4.5s;
       }
     }
   }
@@ -68,9 +69,9 @@
     height: 25%;
     position: absolute;
     bottom: 0;
-    background: linear-gradient(#00000000, #000000aa, #000000cc, #000000ff);
+    background: linear-gradient($color-cta-gradient-step1, $color-cta-gradient-step2, $color-cta-gradient-step3, $color-cta-gradient-step4);
     font-family: 'IBM Plex Mono', monospace;
-    color: white;
+    color: $color-white;
     animation: 1.5s ease-in 6s forwards show-up;
 
     &__text {
@@ -91,31 +92,6 @@
         font-size: 4em;
       }
     }
-  }
-
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #34cf00 }
-  }
-
-  @keyframes become-visible {
-    from { visibility: hidden }
-    to { visibility: visible }
-  }
-
-  @keyframes show-up {
-    from { opacity: 0 }
-    to { opacity: 1 }
-  }
-    
-  @keyframes blink-arrows {
-    from, to { color: transparent }
-    50% { color: white }
   }
   
   @media screen and (max-width: 1000px) {

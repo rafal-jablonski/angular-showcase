@@ -1,0 +1,26 @@
+@import 'src/assets/styles/variables';
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: $color-font-terminal-green }
+}
+
+@keyframes become-visible {
+  from { visibility: hidden }
+  to { visibility: visible }
+}
+
+@keyframes show-up {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+  
+@keyframes blink-arrows {
+  from, to { color: transparent }
+  50% { color: $color-white }
+}

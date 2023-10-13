@@ -5,3 +5,36 @@
   height: 100dvh;
   padding: 24px;
 }
+
+@mixin flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin zero-padding-margin {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin typewriter-container {
+  width: fit-content;
+  overflow: hidden;
+  border-right: 0.15em solid transparent;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+}
+
+@mixin font-family-size-weight-color($font-family, $size, $weight, $color) {
+  font-family: $font-family;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
